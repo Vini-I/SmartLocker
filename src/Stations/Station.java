@@ -33,14 +33,14 @@ public class Station {
         this.address = address;
     }
     
-    public boolean addLocker(int id, int size) {
+    public Locker addLocker(int id, int size) {
         if (id > 0) {
             if (size <= 3 && size >= 1) {
                 Locker locker = new Locker(id, size);
-                return true;
+                return locker;
             }
         }
-        return false;
+        return null;
     }
     
     public String toString() {
