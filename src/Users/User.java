@@ -1,6 +1,6 @@
 package Users;
 
-
+import Packages.Package;
 
 public class User {
     private int id;
@@ -46,15 +46,24 @@ public class User {
     }
 
     public User (int id, String name, String address, String phoneNumber, String email){
-    this.id = id;
-    this.name = name;
-    this.address = address;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+    
+    public boolean retrievePackage(int id, Package mypk) {
+        if (id > 0) {
+            if (id == mypk.getId()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public String toString (){
-        return "User id: " + this.id + "\nUser name: " + this.name + "\nUser address: " + this.address + "\nUser phone number: " + this.phoneNumber + "\nUser email: " + this.email ;
+        return "\nUser:\nUser id: " + this.id + "\nUser name: " + this.name + "\nUser address: " + this.address + "\nUser phone number: " + this.phoneNumber + "\nUser email: " + this.email ;
     }
 }
