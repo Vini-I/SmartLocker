@@ -1,6 +1,6 @@
-package Stations;
+ package Stations;
 
-
+import Lockers.Locker;
 
 public class Station {
     private int id;
@@ -31,5 +31,19 @@ public class Station {
         this.id = id;
         this.maxCapacity = maxCapacity;
         this.address = address;
+    }
+    
+    public boolean addLocker(int id, int size) {
+        if (id > 0) {
+            if (size <= 3 && size >= 1) {
+                Locker locker = new Locker(id, size);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public String toString() {
+        return "\nStation:\nId: " + this.id + "\nMax package capacity: " + this.maxCapacity + "\nAddress: " + this.address;
     }
 }
