@@ -33,7 +33,14 @@ public class User {
     
     //Tarea, hacer una funcion que valide el formato de un numero telefonico costarrisence. USAR REGEX
     public void setPhone(String phone) {
-        this.phoneNumber = phone;
+        if (verifyPhone(phone)) {
+            this.phoneNumber = phone;
+        }
+    }
+    
+    public boolean verifyPhone(String phone) {
+        String regex = "^[0-9]{4}-[0-9]{4}$";
+        return phone.matches(regex);
     }
             
     public void setAdress(String address) {
@@ -42,7 +49,14 @@ public class User {
     
     //Tarea, hacer una funcion que valide que el formato del correo electronico. USAR REGEX
     public void setEmail(String email) {
-        this.email = email;
+        if (verifyEmail(email)) {
+            this.email = email;
+        }
+    }
+    
+    public boolean verifyEmail(String email) {
+        String regex = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
+        return email.matches(regex);
     }
 
     public User (int id, String name, String address, String phoneNumber, String email){
