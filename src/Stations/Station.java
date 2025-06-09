@@ -29,7 +29,7 @@ public class Station {
 
     public Station(int id, int maxCapacity, String address) {
         this.id = id;
-        this.maxCapacity = maxCapacity;
+        this.maxCapacity = maxCapacity; 
         this.address = address;
     }
     

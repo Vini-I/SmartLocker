@@ -55,7 +55,7 @@ public class Locker {
         this.userId = userId;
     }
 
-    public Locker(int id, int size, int packageId, int userId) {
+    public Locker(int id, int size) {
         this.id = id;
         this.size = size;
         this.state = Locker.FREE;

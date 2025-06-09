@@ -38,8 +38,8 @@ public class User {
         }
     }
     
-    public boolean verifyPhone(String phone) {
-        String regex = "^[0-9]{4}-[0-9]{4}$";
+    public static boolean verifyPhone(String phone) {
+        String regex = "^[245678]\\d{7}$";
         return phone.matches(regex);
     }
             
@@ -54,7 +54,7 @@ public class User {
         }
     }
     
-    public boolean verifyEmail(String email) {
+    public static boolean verifyEmail(String email) {
         String regex = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
         return email.matches(regex);
     }
@@ -63,8 +63,12 @@ public class User {
         this.id = id;
         this.name = name;
         this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        if (verifyPhone(phoneNumber)) {
+            this.phoneNumber = phoneNumber;
+        }
+        if (verifyEmail(email)) {
+            this.email = email;
+        }
     }
     
     public boolean retrievePackage(int id, Package mypk) {
