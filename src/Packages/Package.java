@@ -64,6 +64,6 @@ public class Package {
     @Override
     
     public String toString() {
-        return "Package information:\nid: " + this.id + "\nSize: " + this.getSize() + "\nState: " + this.getState() + "\nSender: " + this.sender ;
+        return "\nPackage information:\nid: " + this.id + "\nSize: " + this.getSize() + "\nState: " + this.getState() + "\nSender: " + this.sender ;
     }
 }

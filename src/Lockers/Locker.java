@@ -65,6 +65,6 @@ public class Locker {
 
     @Override
     public String toString() {
-        return "Locker:" + "\nId: " + id + "\nSize:" + size + "\nState:" + state + "\nPackageId=" + packageId + "\nUserId=" + userId;
+        return "\nLocker:" + "\nId: " + id + "\nSize:" + size + "\nState:" + state + "\nPackageId=" + packageId + "\nUserId=" + userId;
     }
 }
