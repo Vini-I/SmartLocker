@@ -6,6 +6,7 @@ public class Station {
     private int id;
     private int maxCapacity;
     private String address;
+    private String[] lockers;
 
     public int getId() {
         return id;
