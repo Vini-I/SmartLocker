@@ -31,8 +31,19 @@ public class Locker {
         }
     }
 
-    public int getState() {
-        return state;
+    public String getState() {
+        switch(state) {
+            case 1 -> {
+                return "Free";
+            }
+            case 2 -> {
+                return "Busy";
+            }
+            case 3 -> {
+                return "Out of service";
+            }
+        }
+        return "Not a possible state";
     }
 
     public int getPackageId() {
@@ -44,7 +55,9 @@ public class Locker {
     }
 
     public void setState(int state) {
-        this.state = state;
+        if (state >= 1 && state <= 3) {
+            this.state = state;
+        }
     }
 
     public void setPackageId(int packageId) {
@@ -57,7 +70,11 @@ public class Locker {
 
     public Locker(int id, int size) {
         this.id = id;
-        this.size = size;
+        if (size == Locker.SMALL || size == Locker.MEDIUM) {
+            this.size = size;
+        } else {
+            this.size = Locker.LARGE;
+        }
         this.state = Locker.FREE;
         this.packageId = 0;
         this.userId = 0;

@@ -39,7 +39,7 @@ public class User {
     }
     
     public static boolean verifyPhone(String phone) {
-        String regex = "^[245678]\\d{7}$";
+        String regex = "^[245678]\\\\d{7}$";
         return phone.matches(regex);
     }
             
