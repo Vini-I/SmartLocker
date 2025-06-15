@@ -1,70 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Lockers;
-
-
+import Packages.Package;
+import Persons.User;
 
 public class Locker {
+    
     private int id;
-    
-    public static final int SMALL = 10, MEDIUM = 20, LARGE = 30;
-    private int size;
-    
-    public static final int FREE=1, BUSY=2, OUTOFSERVICE=3;
-    private int state;
-    
-    private int packageId;
-    
-    private int userId; 
+    private LockerStatus status;
+    private LockerSize size;
+    private Package packageId;
+    private User userId;
 
     public int getId() {
         return id;
     }
 
-    public String getSize() {
-        if (size <= Locker.SMALL) {
-            return "Small";
-        } else if (size > Locker.SMALL && size <= Locker.MEDIUM) {
-            return "Medium";
-        } else if (size > Locker.MEDIUM && size <= Locker.LARGE) {
-            return "Large";
-        } else {
-        return "Package to large";
-        }
+    public LockerStatus getStatus() {
+        return status;
     }
 
-    public int getState() {
-        return state;
+    public LockerSize getSize() {
+        return size;
     }
 
-    public int getPackageId() {
+    public Package getPackageId() {
         return packageId;
     }
 
-    public int getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setState(int state) {
-        this.state = state;
+    public void setStatus(LockerStatus status) {
+        this.status = status;
     }
 
-    public void setPackageId(int packageId) {
+    public void setSize(LockerSize size) {
+        this.size = size;
+    }
+
+    public Locker(int id, LockerSize size, LockerStatus status, Package packageId, User userId) {
+        this.id = id;
+        this.size = LockerSize.LARGE;
+        this.status = LockerStatus.FREE;
         this.packageId = packageId;
-    }
-
-    public void setUserId(int userId) {
         this.userId = userId;
     }
-
-    public Locker(int id, int size, int packageId, int userId) {
-        this.id = id;
-        this.size = size;
-        this.state = Locker.FREE;
-        this.packageId = 0;
-        this.userId = 0;
-    }
+    
 
     @Override
     public String toString() {
-        return "Locker:" + "\nId: " + id + "\nSize:" + size + "\nState:" + state + "\nPackageId=" + packageId + "\nUserId=" + userId;
+        return "Locker: " + " Id: " + id + " Size: " + size + " Status: " + status + " Package Id: " + packageId + " User Id: " + userId;
     }
 }
